@@ -1,0 +1,36 @@
+<html>
+<head>
+    <body>
+<br>
+<br>
+<h2 align="center" style="background: indianred"> Web Calculator</h2>
+<form method="post" action="{% url 'add' %}">
+    {% csrf_token %}
+<table align="center" border="2" cellspacing="0">
+    <tr><th colspan="2"><input type="number" placeholder="First NO" name="fn" required autofocus></th></tr>
+        <tr><th colspan="2"><input type="number" placeholder="Second NO" name="ln" required min="0"></th></tr>
+                   <tr><th><input type="submit" name="add" value="Add"> </th>
+                   <th><input type="submit" name="sub" value="Sub"> </th></tr>
+                    <tr><th><input type="submit" name="mul" value="Mul"> </th>
+                   <th><input type="submit" name="div" value="Div"> </th></tr>
+
+
+</table>
+</form>
+
+{% if data %}
+<h2 align="center" style="background: burlywood"> Result  - {{ data }}</h2>
+
+    {% else %}
+    <h2 align="center" style="background: coral"> Result</h2>
+
+
+{% endif %}
+
+
+
+
+
+</body>
+</head>
+</html>
